@@ -1,20 +1,22 @@
-<h2>Listado de Customers</h2>
+<div class="container">
+  <h2>Listado de Customers</h2>
+  <a class="btn btn-primary" routerLink="/custmers/add"> Crear Customer </a>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let c of customers ">
-      <th scope="row">{{c.id}}</th>
-      <td>{{c.firstName}}</td>
-      <td>{{c.lastName}}</td>
-      <td>{{c.email}}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of customers ">
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName}}</td>
+        <td>{{c.email}}</td>
+      </tr>
+    </tbody>
+  </table>

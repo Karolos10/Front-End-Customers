@@ -6,7 +6,19 @@ import { CustomerListComponent } from './componetns/customer-list/customer-list.
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddComponent } from './componetns/customer-add/customer-add.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes : Routes = [
+
+  {
+    path:'',
+    component: CustomerListComponent
+  },
+  {
+    path:'custmers/add',
+    component: CustomerAddComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +28,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [CustomerAddComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

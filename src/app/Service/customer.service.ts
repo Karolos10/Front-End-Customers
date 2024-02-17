@@ -16,4 +16,8 @@ export class CustomerService {
 
     return this.http.get<Customer []>(this.api);
   }
+
+  createCustomer(customer : Customer):Observable<Customer>{
+    return this.http.post<Customer>(this.api, customer);
+  }
 }

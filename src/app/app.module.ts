@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CustomerListComponent } from './componetns/customer-list/customer-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddComponent } from './componetns/customer-add/customer-add.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,10 @@ import { CustomerAddComponent } from './componetns/customer-add/customer-add.com
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [CustomerListComponent]
+  bootstrap: [CustomerAddComponent]
 })
 export class AppModule { }

@@ -7,11 +7,11 @@ import { Customer } from 'src/app/customer';
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit{
+export class CustomerListComponent implements OnInit {
 
-  customers : Customer [] = [];
+  customers: Customer[] = [];
 
-  constructor(private customerService : CustomerService){
+  constructor(private customerService: CustomerService) {
 
   }
 
@@ -20,15 +20,24 @@ export class CustomerListComponent implements OnInit{
     this.listCustomers();
   }
 
-  listCustomers(){
+  listCustomers() {
     this.customerService.getCustomerList().subscribe(
 
-      data => {this.customers = data,
+      data => {
+        this.customers = data,
         console.log(this.customers);
       }
     );
   }
 
+  deleteCustomer(id: number) {
+
+    console.log(id);
+    this.customerService.deleteCustomerById(id).subscribe(
+      () => this.listCustomers()
+    );
+
+  }
 
 
 }
